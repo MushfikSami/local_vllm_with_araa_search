@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  araa-search:
+    image: temthelem/araa-search:latest
+    container_name: araa-search2
+    ports:
+      - "8090:8000"  # ✅ FIX: 8090 → 8000 (not 8080!)
+    restart: unless-stopped
+    environment:
+      - DOMAIN=localhost:8090
